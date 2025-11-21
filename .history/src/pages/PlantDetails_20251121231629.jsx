@@ -16,9 +16,8 @@ const PlantDetails = () => {
 
 // ));
 //   }, [id]);
-const {data} =useLoaderData()
   console.log(data);
-  const { image, description, category, name, price } = data.plants;
+  const { image, description, category, name, price } = {};
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="card bg-base-100 w-96 shadow-sm">

@@ -1,24 +1,22 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router";
+import { useParams } from "react-router";
 
 const PlantDetails = () => {
-//   const { id } = useParams();
-//   console.log(id);
-//   const [plant, setPlant] = useState([]);
-//   useEffect(() => {
-//     fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
-//       .then((res) => res.json())
-//       .then((data) => setPlant(data?.plants));
-//     fetch dta using axios
-//     axios(`https://openapi.programming-hero.com/api/plant/${id}`)
-//      .then((data) => setPlant(data.data.plants
-
-// ));
-//   }, [id]);
-const {data} =useLoaderData()
-  console.log(data);
-  const { image, description, category, name, price } = data.plants;
+  const { id } = useParams();
+  console.log(id);
+  const [plant, setPlant] = useState([]);
+  useEffect(() => {
+    // fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
+    //   .then((res) => res.json())
+    //   .then((data) => setPlant(data?.plants));
+    // fetch dta using axios
+    axios(`https://openapi.programming-hero.com/api/plant/${id}`)
+     .then((res) => res.json())
+     .then((data) => setPlant(data?.plants));
+  }, [id]);
+  console.log(plant);
+  const { image, description, category, name, price } = plant;
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="card bg-base-100 w-96 shadow-sm">

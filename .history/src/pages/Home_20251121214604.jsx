@@ -18,7 +18,7 @@ const Home = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 justify-items-center">
         <Suspense
           fallback={
-            <p className="text-center  col-span-3 ">
+            <p className="text-center grid-cols-3">
               <span className="loading loading-spinner text-info"></span>
             </p>
           }

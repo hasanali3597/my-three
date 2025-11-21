@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 
 const PlantCard = ({ plant }) => {
-  const { image,category, name, price, id } = plant;
+  const { image, description, category, name, price, id } = plant;
   console.log(plant);
   return (
     <div className="card bg-base-100 w-96 shadow-sm">

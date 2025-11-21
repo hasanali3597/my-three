@@ -36,7 +36,7 @@ const router = createBrowserRouter([
           axios (`https:openapi.programming-hero.com/api/plant/${params.id}`),
       },
     ],
-  }, 
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
