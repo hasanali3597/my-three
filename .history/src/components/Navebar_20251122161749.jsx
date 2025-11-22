@@ -29,14 +29,22 @@ const Navebar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/">Home</NavLink>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/contact">Contact</NavLink>
+              <Link to="/contact">Contact</Link>
             </li>
             <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/about">About</NavLink>
-            </li>
+  <NavLink
+    to="/about"
+    className={({ isActive }) =>
+      isActive ? "text-[#f44250]" : ""
+    }
+  >
+    About
+  </NavLink>
+</li>
+
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">daisyUI</a>
@@ -44,14 +52,14 @@ const Navebar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/">Home</NavLink>
-            </li>
+            <Link to="/">Home</Link>
+          </li>
           <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/contact">Contact</NavLink>
-            </li>
+            <Link to="/contact">Contact</Link>
+          </li>
           <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/about">About</NavLink>
-            </li>
+            <Link to="/about">About</Link>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">

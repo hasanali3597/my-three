@@ -50,7 +50,7 @@ const Navebar = () => {
               <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/contact">Contact</NavLink>
             </li>
           <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/about">About</NavLink>
+              <NavLink className={({isActive})=> isActive?"tex-amber-300" : "" } to="/about">About</NavLink>
             </li>
         </ul>
       </div>

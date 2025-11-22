@@ -50,8 +50,8 @@ const Navebar = () => {
               <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/contact">Contact</NavLink>
             </li>
           <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/about">About</NavLink>
-            </li>
+            <Link to="/about">About</Link>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
