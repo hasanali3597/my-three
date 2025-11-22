@@ -14,7 +14,7 @@ const PlantCard = ({ plant }) => {
         <p>{category}</p>
         <h1>By Now : {price}</h1>{" "}
         <div className="card-actions justify-end">
-          <Link to={`/plant-details/${id}`}>
+          <Link state={plant} to={`/plant-details/${id}`}>
             {" "}
             <button className="btn btn-primary">View Details</button>
           </Link>

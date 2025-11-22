@@ -10,12 +10,13 @@ import Root from "./root/root.jsx";
 import PlantDetails from "./pages/PlantDetails.jsx";
 import axios from "axios";
 import LoadingSpinner from "./components/LoadingSpinner.jsx";
+import Shopping from "./pages/Shopping.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
-    hydrateFallbackElement:<LoadingSpinner/>,
+    hydrateFallbackElement: <LoadingSpinner />,
     children: [
       {
         index: true,
@@ -33,12 +34,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/plant-details/:id",
-        element: <PlantDetails/>,
-       loader: ({params})=>  
-          axios (`https:openapi.programming-hero.com/api/plant/${params.id}`),
+        element: <PlantDetails />,
+        loader: ({ params }) =>
+          axios(`https:openapi.programming-hero.com/api/plant/${params.id}`),
+      },
+      {
+        path: "/shoppin",
+        element: <Shopping />,
       },
     ],
-  }, 
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
