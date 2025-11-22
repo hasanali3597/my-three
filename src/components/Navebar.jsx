@@ -2,6 +2,13 @@ import React from "react";
 import { Link, NavLink } from "react-router";
 import ThemToggle from "./ThemToggle";
 
+const links = [
+  { name: "Home", path: "/" },
+  { name: "Contact", path: "/contact" },
+  { name: "About", path: "/about" },
+];
+
+
 const Navebar = () => {
   return (
     <div className="navbar bg-base-100 shadow-sm">
@@ -28,30 +35,36 @@ const Navebar = () => {
             tabIndex="-1"
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/contact">Contact</NavLink>
-            </li>
-            <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/about">About</NavLink>
-            </li>
+            {
+              links.map(link =><li key={link.path}>
+                <NavLink
+                  className={({ isActive }) => isActive ? "bg-amber-300" : ""}
+                  to={link.path}
+                  >
+                {link.name}
+                </NavLink>
+
+
+              </li>)
+            }
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">daisyUI</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/">Home</NavLink>
-            </li>
-          <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/contact">Contact</NavLink>
-            </li>
-          <li>
-              <NavLink className={({isActive})=> isActive?"bg-amber-300" : "" } to="/about">About</NavLink>
-            </li>
+          {
+              links.map(link =><li key={link.path}>
+                <NavLink
+                  className={({ isActive }) => isActive ? "bg-amber-300" : ""}
+                  to={link.path}
+                  >
+                {link.name}
+                </NavLink>
+
+
+              </li>)
+            }
         </ul>
       </div>
       <div className="navbar-end">
